@@ -1,28 +1,55 @@
-# DIVI Project
+GIRLSTOKEN  
+===========================
 
-DIVI Core integration/staging repository
-=====================================
+Algorithm   Scrypt  
+Type   PoW/PoS  
+Coin name   GirlsToken  
+Coin abbreviation   XGTC  
+Address letter   G  
+RPC port   10666  
+P2P port   10665  
+Block reward   100 coins  
+Ramdom superblocks 500 coins  end at block 450k
+Starting at block 10000  
+High chances to get a ramdom superblock [15%]  end at block 450k
+Total pow coin supply   115000000 coins  
+Premine amount   10500000 coins  
+Last PoW block   block 1000000  
+Coinbase maturity   10 blocks  
+Target spacing   64 seconds  
+Target timespan   1 block  
+Transaction confirmations   4 blocks  
+Dark gravity wave implemented  
+Dedicated built-in seed for easy syncing
+PoS percentage   10% per year drop to 2.5% at block 450k 
+Ramdom PoS superblocks set on 100% payout end at block 450k
+Min/max coin age 5/unlimited  
 
-We wish to make it as easy to participate in Divi development as possible.  Open source software typically has very high but hidden barriers to entry to each project due to the massive and normally undocumented state space of potential operating systems, pre-loaded packages and other development environment details.  Further, regression testing turns into a nightmare if developers have used even slightly different versions of the same operating system or one of the normally numerous packages – much less different packages or a different operating system.   Life has gotten better with the Gitian builds used to ensure identical certified release packages to combat malware but setting up a Gitian build is still a dark art. 
 
-The advent of lightweight, cross-platform containers make it, not just possible but, easy to develop and run the exact same software across all non-mobile platforms – including both major and minor cloud providers.  DIVI is built and run inside a Docker container so  *anyone* can install the free community version of Docker on their Windows, Mac or Linux machine and immediately build and run the DIVI software.  Development for the iPhone and Android wallets is unfortunately far more difficult due to an ongoing lack of a unified standard – but that is something that we will look at in the future with the increasing availability and sophistication of environments like Ionic or Xamarin. 
+Development process
+===========================
 
-To build divi:
-1.  Ensure docker is installed on your machine (https://store.docker.com/search?type=edition&offering=community)
-2.  Create a directory and copy the divi/docker directory into it
-3.  docker build -t [your tag name] .
+Developers work in their own trees, then submit pull requests when
+they think their feature or bug fix is ready.
 
-If you don't want to build divi
-1.  Ensure docker is installed on your machine (https://store.docker.com/search?type=edition&offering=community)
-2.  docker pull caldwellsw/divi:base
+The patch will be accepted if there is broad consensus that it is a
+good thing.  Developers should expect to rework and resubmit patches
+if they don't match the project's coding conventions (see coding.txt)
+or are controversial.
 
-To run divi and connect to the testnet
-1.  docker run -it -p51472:51472 [your tag name or caldwellsw/divi:base]
-2.  divid -debug
-3.  divi-cli addnode dt01.westus.cloudapp.azure.com add
-4.  divi-cli addnode dt02.westus.cloudapp.azure.com add
-5.  divi-cli getpeerinfo
+The master branch is regularly built and tested, but is not guaranteed
+to be completely stable. Tags are regularly created to indicate new
+stable release versions of GirlsToken.
 
-* It may take some time before you see other nodes in the testnet.
+Feature branches are created when there are major new features being
+worked on by several people.
 
+From time to time a pull request will become outdated. If this occurs, and
+the pull is no longer automatically mergeable; a comment on the pull will
+be used to issue a warning of closure. The pull will be closed 15 days
+after the warning if action is not taken by the author. Pull requests closed
+in this manner will have their corresponding issue labeled 'stagnant'.
 
+Issues with no commits will be given a similar warning, and closed after
+15 days from their last activity. Issues closed in this manner will be 
+labeled 'stale'.
